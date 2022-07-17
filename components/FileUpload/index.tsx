@@ -22,7 +22,6 @@ const DragDropFile = () => {
             setFileSelectedToUpload(true);
             setAllUploaded(false);
             const filesArray = Array.from(files);
-            console.log({filesArray});
             setFileUploadInfo(filesArray);
             filesArray.forEach(async (file:any, index:number)=>{
                 const storageRef = ref(storage, `/files/${file.name}`);
@@ -53,11 +52,6 @@ const DragDropFile = () => {
                 ()=>{
                   update(databaseRef(database,'/'),{
                     lastUploaded: new Date(),
-                  }).then((res) => {
-                    console.log('written', res);
-                  })
-                  .catch((error) => {
-                    console.log(error);
                   });
                 }
             );

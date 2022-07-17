@@ -20,9 +20,9 @@ const FileList = () => {
                     <Text m='auto'>Waiting to list uploaded items</Text>
                 </Flex>);
         return fileList.map((fileItem: any, index: number) => {
-            return <Flex alignItems='center' key={`${fileItem.name}-${index}`} w='100%' pl={6} pr={6} pb={4}>
+            return <Flex alignItems='center' key={`${fileItem.name}-${index}`} w='100%' pl={4} pr={4} pb={4}>
                 <Avatar size={'sm'} mr={8} name={fileItem.filename}></Avatar>
-                <Text w='100%'>{fileItem.filename}</Text>
+                <Text w='100%' overflow='hidden'>{fileItem.filename}</Text>
                 <Button w='max-content' onClick={() => download(fileItem.downloadURL, fileItem.filename)}>Open</Button>
             </Flex>
         })
