@@ -30,7 +30,6 @@ const DragDropFile = () => {
                     const percent = Math.round(
                         (snapshot.bytesTransferred / snapshot.totalBytes) * 100
                     );
-                    console.log(snapshot);
                     setFileUploadInfo((oldFiles:any[])=>{
                         const temp=[...oldFiles];
                         temp[index] = {
